@@ -57,7 +57,7 @@ settings_table = {
 		thickness=5,
 		start_angle=0,
 		end_angle=360
-	}, -- ]]
+	}, ]]
 	{
 		name='time',
 		arg='%S',
@@ -267,7 +267,7 @@ settings_table = {
 		thickness=5,
 		start_angle=1.5,
 		end_angle=120
-	},
+	}
 }
 
 -- Use these settings to define the origin and extent of your clock.
@@ -370,11 +370,11 @@ function conky_clock_rings()
                 local str=''
                 local value=0
 
-                str=string.format('${%s %s}',pt['name'],pt['arg'])
+				str=string.format('${%s %s}',pt['name'],pt['arg'])
                 str=conky_parse(str)
 
                 value=tonumber(str)
-                if value == nil then value = 0 end
+				if value == nil then value = 0 end
                 pct=value/pt['max']
 
                 draw_ring(cr,pct,pt)
@@ -386,12 +386,9 @@ function conky_clock_rings()
 
 	if conky_window==nil then return end
 	local cs=cairo_xlib_surface_create(conky_window.display,conky_window.drawable,conky_window.visual, conky_window.width,conky_window.height)
-
-	local cr=cairo_create(cs)	
-
+	local cr=cairo_create(cs)
 	local updates=conky_parse('${updates}')
 	update_num=tonumber(updates)
-
 	if update_num>5 then
 		for i in pairs(settings_table) do
 			setup_rings(cr,settings_table[i])
