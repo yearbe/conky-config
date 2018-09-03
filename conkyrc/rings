@@ -54,7 +54,7 @@ TEXT
 ${font Ubuntu Mono:size=16}  Root ${fs_used /}/${fs_size /}    Home ${fs_used /home}/${fs_size /home}$font
 ${voffset 120}${goto 123}${font Ubuntu Mono:size=32}${time %H:%M}${voffset -10}${font Ubuntu Mono:size=13}${font}
 ${voffset -35}${goto 290}${hr 2}
-${voffset -75}${goto 315}${cpugraph 50,285 d5dcde ffffff} #${voffset -18} ${alignr} ${execi 60 gmailnotify.sh}
+${voffset -75}${goto 313}${cpugraph 50,285 d5dcde ffffff} #${voffset -18} ${alignr} ${execi 60 gmailnotify.sh}
 ${voffset 40}${goto 300}${time %A, %d %B %Y}
 ${font Ubuntu Mono:size=18}${goto 335}BATTERY    ${battery BAT0}
 ${voffset 20}${goto 285}Kernel:  $kernel
