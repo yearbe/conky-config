@@ -1,55 +1,64 @@
-# ------------------------- Windows Settings
-# Create own window instead of using desktop (required in nautilus)
-own_window yes
-own_window_type desktop
-own_window_transparent no
-own_window_hints undecorated,sticky,below,skip_taskbar,skip_pager
-own_window_colour black
-own_window_class Conky
-own_window_title Simple Default Conky
-own_window_argb_visual yes
-own_window_argb_value 0
-double_buffer yes
+conky.config = {
+-- ------------------------- Windows Settings
+-- Create own window instead of using desktop (required in nautilus)
+--	own_window = true,
+--	own_window_type = 'desktop',
+--	own_window_transparent = false,
+--	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+--	own_window_colour = 'black',
+--	own_window_class = 'Conky',
+--	own_window_title = 'Simple Default Conky',
+--	own_window_argb_visual = true,
+--	own_window_argb_value = 0,
+--	double_buffer = true,
 
-# ------------------------- Location
-minimum_size 140 50
-maximum_width 1400
-gap_x 20
-gap_y 1380
+	own_window = true,
+	own_window_title = "conky",
+	own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_type = normal,
 
-# ------------------------- FONT
-use_xft yes
-xftfont GE Inspira:bold:size=20
+-- ------------------------- Location
+	minimum_width = 140, minimum_height = 50,
+	maximum_width = 1400,
+	gap_x = 20,
+	gap_y = 1380,
 
-# Alpha of Xft font. Must be a value at or between 1 and 0 ###
-xftalpha 0.1	
-override_utf8_locale yes
-draw_shades no
-default_shade_color black
-draw_outline yes
-default_outline_color black
-uppercase no
+-- ------------------------- FONT
+	use_xft = true,
+	font = 'GE Inspira:bold:size=20',
 
-alignment top_left
+-- Alpha of Xft font. Must be a value at or between 1 and 0 ###
+	xftalpha = 0.1,
+	override_utf8_locale = true,
+	draw_shades = false,
+	default_shade_color = 'black',
+	draw_outline = true,
+	default_outline_color = 'black',
+	uppercase = false,
 
-# ------------------------- Colors
-default_color DCDCDC
-# Special Color
-color0 1793d0
-# Arch gray
-color4 4D4D4D
+	alignment = 'top_left',
 
-# ------------------------- BORDERS
-draw_borders no
-draw_outline no
-stippled_borders 0
-border_inner_margin 0
-border_outer_margin 0
-border_width 0
+-- ------------------------- Colors
+	default_color = '#DCDCDC',
+-- Special Color
+	color0 = '#1793d0',
+-- Arch gray
+	color4 = '#4D4D4D',
 
-# ------------------------- OTHER
-background yes
-update_interval 36000
+-- ------------------------- BORDERS
+	draw_borders = false,
+	draw_outline = false,
+	stippled_borders = 0,
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	border_width = 0,
 
-TEXT
-${font GE Inspira:bold:pixelsize=40}${color0}Arch ${color}Linux. ${color0}${font GE Inspira:bold:pixelsize=14}${color4} A simple, lightweight linux distribution.
+-- ------------------------- OTHER
+	background = true,
+	update_interval = 36000,
+
+};
+
+conky.text = '${font GE Inspira:bold:pixelsize=40}${color0}Arch ${color}Linux. ${color0}${font GE Inspira:bold:pixelsize=14}${color4} A simple, lightweight linux distribution.';
